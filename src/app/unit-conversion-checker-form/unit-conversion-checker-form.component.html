@@ -1,0 +1,35 @@
+<div style="margin-top: 325px;" class="card-container">
+    <div  class="card">
+
+        <form (ngSubmit)="onSubmit()" #converterCheckForm="ngForm">
+            <div class="form-group">
+                <label for="name">Convert From Unit: </label>
+                <select  class="form-control" id="sourceUnit" required [(ngModel)]="model.sourceUnit" (change)="onSourceUnitChange($event)" name="sourceUnit">
+                    <option *ngFor="let unitName of sourceUnitNames" [value]="unitName.name">{{unitName.display}}</option>
+                </select>                
+              </div>      
+        
+            <div class="form-group">
+            <label for="name">Convert Value: </label>
+            <input type="number" class="form-control" id="sourceValue" required  [(ngModel)]="model.sourceValue" name="sourceValue">
+          </div>
+          
+          <div class="form-group">
+            <label for="name">Convert To Unit: </label>
+            <select class="form-control" id="targetUnit" required [(ngModel)]="model.targetUnit" name="targetUnit">
+                <option *ngFor="let unitName of targetUnitNames" [value]="unitName.name">{{unitName.display}}</option>
+            </select>                        
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Answer Given: </label>
+            <input type="number" class="form-control" id="targetValue" required  [(ngModel)]="model.targetValue" name="targetValue">
+          </div>      
+        
+          <button type="submit" class="btn btn-success" [disabled]="!converterCheckForm.form.valid">Submit</button>
+          <h3>{{response}}</h3>
+        </form>
+    </div>    
+</div>
+
+
