@@ -1,5 +1,5 @@
 # Brash Code Challenge CLIENT
-> This is my response to the Code Challenge issued by Ventera - Next Steps.
+> This is my CLIENT response to the Code Challenge issued by Ventera - Next Steps.
 
 The choices made while building this project were made in an effort to highlight some techniques that would make this project easier to expand and maintain if it were part of a larger, more complex product. Admittedly, the solution is decidedly more involved than necessry but since this is part of the interview process, I decided to err on the side of more is indeed more.
 
