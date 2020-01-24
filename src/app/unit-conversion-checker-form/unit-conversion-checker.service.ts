@@ -3,6 +3,8 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { environment } from '../../environments/environment';
+
 import { UnitConversionChecker } from "./unit-conversion-checker";
 import { UnitConversionCheckerResponse } from './unit-conversion-checker-response';
 
@@ -11,7 +13,7 @@ import { UnitConversionCheckerResponse } from './unit-conversion-checker-respons
 })
 export class UnitConversionCheckerService {
   
-  private checkUrl = 'http://localhost:3000/api/v1/unit-convert';  // URL to web api
+  // private checkUrl = 'http://localhost:3000/api/v1/unit-convert';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,7 +22,7 @@ export class UnitConversionCheckerService {
   constructor(private http: HttpClient) { }
   
   checkUnitConversion(packet: UnitConversionChecker):Observable<UnitConversionCheckerResponse> {
-    return this.http.post<UnitConversionChecker>(this.checkUrl, packet, this.httpOptions)
+    return this.http.post<UnitConversionChecker>(environment.apiUrl, packet, this.httpOptions)
     .pipe(
       tap((response: any) => this.log(`check Conversion ... Response was=${response.response}`)),
       catchError(this.handleError<UnitConversionCheckerResponse>('addHero'))

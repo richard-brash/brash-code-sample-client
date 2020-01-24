@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UnitConversionCheckerFormComponent } from './unit-conversion-checker-form.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('UnitConversionCheckerFormComponent', () => {
   let component: UnitConversionCheckerFormComponent;
@@ -8,7 +11,14 @@ describe('UnitConversionCheckerFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UnitConversionCheckerFormComponent ]
+      imports: [
+      BrowserModule,
+      FormsModule,
+      HttpClientModule],      
+      declarations: [ UnitConversionCheckerFormComponent ],
+      providers: [
+        HttpClientModule
+      ]      
     })
     .compileComponents();
   }));
