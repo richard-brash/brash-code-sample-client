@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The file at ./environment/environment.ts must contain an entry pointing to a running instance of brash-code-challenge-api.
 
-# Example:
+### Example contents for ./environment/environment.ts
 
 ```sh
 export const environment = {
